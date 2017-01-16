@@ -1,0 +1,48 @@
+
+   
+        <table  border="2">
+		
+			
+           
+            <thead>
+                <tr>
+                    <th>Select Item</th>
+
+                    <th>OrderName</th>
+
+                    <th>Quantity</th>
+
+                    <th>Price</th>
+
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in details">
+                    <td><input type="checkbox" ng-model="product.select" ng-change="setTotals(details)"></td>
+                    <td>{{product.name}}</td>
+
+                    <td>{{product.quantity}}</td>
+
+                    <td>{{product.price | number:2}}</td>
+					
+                    <td>{{product.total | number:2}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>Totals</td>
+
+                    <td>{{billCount}}</td>
+
+                    <td></td>    
+
+                    <td>{{billTotal }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
